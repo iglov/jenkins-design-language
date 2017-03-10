@@ -15,10 +15,9 @@ node {
 
             stage "Test and validate"
                 sh "npm install gulp-cli && ./node_modules/.bin/gulp"
-                step(
-                     timeout(time:30, unit:'SECONDS') {
-                         junit 'reports/**/*.xml'
-                     })
+                timeout(time:30, unit:'SECONDS') {
+                         step(junit 'reports/**/*.xml')
+                }
         }
 
     stage "Cleanup"
