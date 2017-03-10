@@ -15,6 +15,7 @@ node {
 
             stage "Test and validate"
                 sh "npm install gulp-cli && ./node_modules/.bin/gulp"
+                junit 'reports/**/*.xml'
         }
 
     stage "Cleanup"
